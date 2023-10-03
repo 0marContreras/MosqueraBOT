@@ -4,6 +4,7 @@ import { Champions } from './words/champions.js';
 import { Lolwords } from './words/lolwords.js';
 import { Cswords } from './words/cswords.js';
 
+const oofID= 695909007918891049
 const bot = new Client({
     intents: [
         IntentsBitField.Flags.Guilds,
@@ -18,6 +19,8 @@ bot.on('ready', (c) =>(
     console.log("Ready")
 ))
 
+
+//messages
 bot.on('messageCreate', (msg) => {
 
     if (msg.author.bot){
@@ -30,6 +33,7 @@ bot.on('messageCreate', (msg) => {
 
    let fixed = msg.content.toLowerCase();
 
+   //Ping pong
     if (msg.content.toLowerCase() === "ping"){
         msg.reply("Pong")
     } else if (msg.content.toLowerCase() === "pong") {
@@ -41,7 +45,9 @@ bot.on('messageCreate', (msg) => {
         msg.reply("Verdad que si?")
     } 
 
-    
+    if (member == oofID || member == 811112978471452692){
+        msg.reply({ files: [{ attachment: 'https://i.ytimg.com/vi/Gjdo-WV2MIM/maxresdefault.jpg' }] });
+    }
 
 
     // Counter
@@ -82,7 +88,9 @@ bot.on('messageCreate', (msg) => {
 
 })
 
-//lol status
+
+
+//precence
 
 
 bot.login(process.env.DISCORD_KEY);

@@ -1,13 +1,16 @@
 import {Client, IntentsBitField} from 'discord.js';
 import 'dotenv/config'
-import { Champions } from './champions.js';
+import { Champions } from './words/champions.js';
+import { Lolwords } from './words/lolwords.js';
+import { Cswords } from './words/cswords.js';
 
 const bot = new Client({
     intents: [
         IntentsBitField.Flags.Guilds,
         IntentsBitField.Flags.GuildMembers,
         IntentsBitField.Flags.GuildMessages,
-        IntentsBitField.Flags.MessageContent
+        IntentsBitField.Flags.MessageContent,
+        IntentsBitField.Flags.GuildPresences
     ]
 });
 
@@ -22,7 +25,7 @@ bot.on('messageCreate', (msg) => {
     }
 
   
-
+   const userPresence = msg.author.presence;
    const member = msg.author.id;
 
    let fixed = msg.content.toLowerCase();
@@ -38,42 +41,48 @@ bot.on('messageCreate', (msg) => {
         msg.reply("Verdad que si?")
     } 
 
-    if (msg.content.toLowerCase() === "lol" || fixed.includes("grieta") || fixed.includes("league of legends") || fixed.includes("lolaso") || fixed.includes("lol") || fixed.includes("liga de las leyendas")){
-        console.log("lolero")
-        msg.reply("Puto lolero")
-        const banReason = 'Por loler@ de mierda 🤣🤣🤣🤣';
-        msg.guild.members.ban(member, { reason: banReason }).then(console.log).catch(console.error);
-    }
+    
+
 
     // Counter
+    Cswords.forEach(objCs =>{
+        if(fixed.includes(objCs.palabra)){
+            msg.reply("Maldito counter, odio a los judios")
+            const banReason = 'Maldita bola de judios';
+            msg.guild.members.ban(member, { reason: banReason}).then(console.log).catch(console.error);
+            return
+        }
+    })
 
-    if (msg.content.toLowerCase() == "csgo" || fixed.includes("sale su conter") || fixed.includes("sale su counter") || fixed.includes("conter") || fixed.includes("counter")){
-        console.log("Counter")
-        msg.reply("Maldito counter, odio a los judios")
-        const banReason = 'Maldita bola de judios';
-        msg.guild.members.ban(member, { reason: banReason}).then(console.log).catch(console.error);
-    }
 
-    
-    for (let i = 0; i < Champions.length; i++){
-
-        let champ = msg.content.split(" ");
-        let exists = Champions.some(obj => obj.id === champ[0].toLowerCase());
-
-        if (exists) {
-            console.log("lolero")
+    //LOL
+    Lolwords.forEach(objLol=>{
+        if(fixed.includes(objLol.palabra)){
             msg.reply("Puto lolero")
             const banReason = 'Por loler@ de mierda 🤣🤣🤣🤣';
             msg.guild.members.ban(member, { reason: banReason }).then(console.log).catch(console.error);
             return
-            
-          } else {
-            continue
-          }
-    }
+        }
+    })
+
+
+    Champions.forEach(obj => {
+        let champ = msg.content.split(" ");
+        champ.forEach(champ =>{
+            if (champ.toLowerCase() === obj.id ){
+                msg.reply("Puto lolero")
+                const banReason = 'Por loler@ de mierda 🤣🤣🤣🤣';
+                msg.guild.members.ban(member, { reason: banReason }).then(console.log).catch(console.error);
+                return
+        }})
+    })
+
 
     
 
 })
+
+//lol status
+
 
 bot.login(process.env.DISCORD_KEY);

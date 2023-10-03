@@ -33,11 +33,25 @@ bot.on('messageCreate', (msg) => {
         msg.reply("Ping")
     }
 
+    // mama griz
+    if (fixed.includes("mama") && fixed.includes("griz")){
+        msg.reply("Verdad que si?")
+    } 
+
     if (msg.content.toLowerCase() === "lol" || fixed.includes("grieta") || fixed.includes("league of legends") || fixed.includes("lolaso") || fixed.includes("lol") || fixed.includes("liga de las leyendas")){
         console.log("lolero")
         msg.reply("Puto lolero")
         const banReason = 'Por loler@ de mierda 🤣🤣🤣🤣';
         msg.guild.members.ban(member, { reason: banReason }).then(console.log).catch(console.error);
+    }
+
+    // Counter
+
+    if (msg.content.toLowerCase() == "csgo" || fixed.includes("sale su conter") || fixed.includes("sale su counter") || fixed.includes("conter") || fixed.includes("counter")){
+        console.log("Counter")
+        msg.reply("Maldito counter, odio a los judios")
+        const banReason = 'Maldita bola de judios';
+        msg.guild.members.ban(member, { reason: banReason}).then(console.log).catch(console.error);
     }
 
     

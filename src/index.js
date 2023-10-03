@@ -29,9 +29,11 @@ bot.on('messageCreate', (msg) => {
 
     if (msg.content.toLowerCase() === "ping"){
         msg.reply("Pong")
+    } else if (msg.content.toLowerCase() === "pong") {
+        msg.reply("Ping")
     }
 
-    if (msg.content.toLowerCase() === "lol" || fixed.includes("grieta") || fixed.includes("league of legends") || fixed.includes("lolaso") || fixed.includes("lol")){
+    if (msg.content.toLowerCase() === "lol" || fixed.includes("grieta") || fixed.includes("league of legends") || fixed.includes("lolaso") || fixed.includes("lol") || fixed.includes("liga de las leyendas")){
         console.log("lolero")
         msg.reply("Puto lolero")
         const banReason = 'Por loler@ de mierda 🤣🤣🤣🤣';
@@ -39,17 +41,20 @@ bot.on('messageCreate', (msg) => {
     }
 
     
-    for (let i = 0; i = Champions.length; i++){
+    for (let i = 0; i < Champions.length; i++){
 
         let champ = msg.content.split(" ");
-        console.log(champ[i])
-        let exists = champ.some(obj => obj.id === champ[0].toLowerCase());
+        let exists = Champions.some(obj => obj.id === champ[0].toLowerCase());
 
         if (exists) {
-            console.log('Value exists in the object array');
-            break;
+            console.log("lolero")
+            msg.reply("Puto lolero")
+            const banReason = 'Por loler@ de mierda 🤣🤣🤣🤣';
+            msg.guild.members.ban(member, { reason: banReason }).then(console.log).catch(console.error);
+            return
+            
           } else {
-            console.log('Value does not exist in the object array');
+            continue
           }
     }
 

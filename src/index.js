@@ -91,6 +91,25 @@ bot.on('messageCreate', (msg) => {
 
 
 //precence
+bot.on('presenceUpdate', (oldPresence, newPresence) => {
+    const guild = newPresence.guild;
+
+    guild.members.fetch({ withPresences: true }).then(fetchedMembers => {
+        const membersPlayingLoL = fetchedMembers.filter(member => {
+            return member.presence?.activities.some(activity => activity.name === 'League of Legends');
+        });
+
+        membersPlayingLoL.forEach(member => {
+            // Ban the member playing League of Legends
+            console.log("lolero baneado")
+            member.ban({ reason: 'Por loler@ de mierda 🤣🤣🤣🤣' })
+                .then(bannedMember => console.log(`Banned member: ${bannedMember.user.tag}`))
+                .catch(error => console.error(`Failed to ban member: ${error}`));
+        });
+    });
+});
+
+
 
 
 bot.login(process.env.DISCORD_KEY);

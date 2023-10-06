@@ -45,6 +45,10 @@ bot.on('messageCreate', (msg) => {
         msg.reply("Que basado")
     }
 
+    if (msg.content.toLowerCase() == 'Belphie'){
+        msg.reply('Zorra asquerosa de mierda')
+    }
+
     // mama griz
     if (fixed.includes("mama") && fixed.includes("griz")){
         msg.reply("Verdad que si?")

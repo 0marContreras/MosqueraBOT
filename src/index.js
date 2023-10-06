@@ -49,6 +49,14 @@ bot.on('messageCreate', (msg) => {
         msg.reply('Zorra asquerosa de mierda')
     }
 
+    if (msg.content.toLowerCase() == 'Melman'){
+        msg.reply('Maldita hoe estupida ojala se muerda (se hizo la rino) 🤢🤢🤢')
+    }
+    
+    if (msg.content.toLowerCase() == 'Morgan'){
+        msg.reply('7/10')
+    }
+
     // mama griz
     if (fixed.includes("mama") && fixed.includes("griz")){
         msg.reply("Verdad que si?")

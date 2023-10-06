@@ -5,6 +5,7 @@ import { Lolwords } from './words/lolwords.js';
 import { Cswords } from './words/cswords.js';
 
 const oofID= 695909007918891049
+const FableShit = 513767957399076882
 const bot = new Client({
     intents: [
         IntentsBitField.Flags.Guilds,
@@ -51,6 +52,10 @@ bot.on('messageCreate', (msg) => {
 
     if (member == oofID || member == 811112978471452692){
         msg.reply({ files: [{ attachment: 'https://i.ytimg.com/vi/Gjdo-WV2MIM/maxresdefault.jpg' }] });
+    }
+
+    if(member == FableShit ){
+        msg.reply("Pedazo de mierda seca 🤣🤣🤣")
     }
 
 

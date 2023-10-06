@@ -59,7 +59,7 @@ bot.on('messageCreate', (msg) => {
     }
 
     if(fixed.includes("morgan")){
-        msg.reply("7/10")
+        msg.reply("8.5/10")
     }
 
     if (member == oofID || member == 811112978471452692){

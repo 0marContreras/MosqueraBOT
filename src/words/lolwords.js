@@ -12,5 +12,6 @@ export const Lolwords =[
     {"palabra": "l0l"},
     {"palabra": "invocador"},
     {"palabra": "invoker"},
+    {"palabra": "5vs5"},
     
 ]

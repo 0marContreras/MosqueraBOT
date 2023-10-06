@@ -40,6 +40,10 @@ bot.on('messageCreate', (msg) => {
         msg.reply("Ping")
     }
 
+    if (msg.content.toLowerCase() == 'ya llego el mas basado' && member == 511698446122483712){
+        msg.reply("Que basado")
+    }
+
     // mama griz
     if (fixed.includes("mama") && fixed.includes("griz")){
         msg.reply("Verdad que si?")

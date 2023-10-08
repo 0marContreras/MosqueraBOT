@@ -50,6 +50,7 @@ bot.on('messageCreate', (msg) => {
         msg.reply("Verdad que si?")
     } 
 
+    
     if (fixed.includes("belphie")){
         msg.reply("Una cagada asquerosa, repelente, abyecta, vomitiva, mugrosa, maldita, diarreosa, estercolera, inmunda, malnacida, pudenda, apestosa, maloliente, cabrona, maricona, huevona, pendeja, tarada, cancerígena, jodida, culeada, gilipollesca, pelotuda, encamada, malnacida, retardada, atrasada, inútil, móngola, incestuosa, burda, estúpida, insulsa, putrefacta, traicionera, indigna, chupapollas, soplahuevos, esnifacojones, gueleculo, coprofágica, masca-morrones, infecta, cerda, nauseabunda, cochambrosa, cochina, verdulera, infame, ruin, rastrera, degradada, descerebrada, zopenca, zafia, puta, engreída, esquizofrénica, granulenta, infeliz, profana, calamitosa, deficiente, cretina, lela, ramera, fulana, calientaguevos, ridícula, petarda, pasmarote, fistro, desidiosa, puta, reputa, soputa, recontraputa, hija de puta, hija de un millón de putas, escupepitos, caradepedo, necrofílica, alientoamojón, lambe-bukaka, revuelcaleche, coñoesumadre y de su abuela, conchuda, culoroto, nalgas reventadas, tragasable, succionaditos, esfinterpartido, ojetedesilachado, sorbemocos, capulla, pelmaza, zoquete, masturbadora crónica, espuria, chupa-tampones, regluda, coprófaga, gerontofílica, turra, ojete, atorrante, tierrúa, pajúa, amamaguevos, onanista caradeconcha, hija de un camion de iveco lleno de porongas, porrero,marihuanero,cocainomano,drogadicto,pasta basero, falopero, trola, trolo, gordo fofo, cabeza de poronga, tobogán de piojos, pelado cabeza de rodilla, cementerio de canelones, sifilitico, sidoso, cumslut, perra de semen, muerto, muerto de mierda, pechofrio, termotanque de sida, termotanque de leche, gordo tetitas de flan, teton, termotanque de grasa, chupador de porongas a domicilio, pussyboy, hijo de 400 millones de anillos de saturno repleto de putas, violado, culorroto, culo sangrado,amargo, pelado cabeza de bolo lustrado, sucio, asqueroso, calientapijas, cana, gorro, yuta, poli, zorro, caradura,cerebro de mosquito, cerdo, chancho,chupapija,mamador,chupaculo,chupamedias,chupapene,chupaverga, chupasangre, buitre , chaja,cipayo, ciruja")
     }
@@ -70,6 +71,9 @@ bot.on('messageCreate', (msg) => {
         msg.reply("Pedazo de mierda seca 🤣🤣🤣")
     }
 
+    if(fixed.includes("easter egg")){
+        msg.reply({ files: [{ attachment: 'https://i.ibb.co/wJPGKGX/imagen-2023-10-07-210654369.png' }] });
+    }
 
     // Counter
     Cswords.forEach(objCs =>{

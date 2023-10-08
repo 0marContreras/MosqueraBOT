@@ -72,7 +72,7 @@ bot.on('messageCreate', (msg) => {
     }
 
     if(fixed.includes("easter egg")){
-        msg.reply({ files: [{ attachment: 'https://i.ibb.co/wJPGKGX/imagen-2023-10-07-210654369.png' }] });
+        msg.reply({ files: [{ attachment: 'https://i.ibb.co/wJPGKGX/imagen-2023-10-07-210654369.png', name: 'SPOILER_NAME.jpg' }] });
     }
 
     // Counter
